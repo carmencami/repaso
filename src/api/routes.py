@@ -17,7 +17,9 @@ CORS(api)
 
 @api.route('/register', methods=['POST'])
 def register():
-    data = request.get_json();
+    data = request.get_json()
+    print("Datos recibidos:", data)
+
     username = data.get('username')
     email = data.get('email')
     password = data.get('password')
@@ -26,7 +28,8 @@ def register():
         return jsonify({"msg": "Todos los campos son requeridos"}), 400 
     if User.query.filter_by(email=email).first():
         return jsonify({"msg":"Este email ya está registrado"}), 400
-    hashed_password = generate_password_hash(password, method='sha256')
+    
+    hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
 
     user = User(username=username, email=email, password=hashed_password)
     db.session.add(user)
@@ -44,9 +47,11 @@ def login():
         return ({"msg": "Todos los campos son requeridos"}), 400
     
     user = User.query.filter_by(email=email).first()
+
     if user and check_password_hash(user.password, password):
         access_token = create_access_token(identity={'id':user.id})
         return jsonify(access_token=access_token), 200
+
     return jsonify({"msg":"Error en el login"}), 401
 
 @api.route('/users/<int:id>', methods=['GET'])

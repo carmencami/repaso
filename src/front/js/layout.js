@@ -9,11 +9,11 @@ import { Login } from "./pages/login";
 import { ProductDetail } from "./pages/productDetail";
 import { Profile } from "./pages/profile";
 import { Cart } from "./pages/cart";
-import { Demo } from "./pages/demo";
+import { Tienda } from "./pages/tienda";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+import {Navbar}  from "./component/navbar";
 import { Footer } from "./component/footer";
 
 //create your first component
@@ -33,11 +33,12 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Register />} path="/register" />
-                        <Route element={<Demo />} path="/demo" />
+                        <Route element={<Tienda />} path="/tienda" />
+                        <Route element={<Profile />} path="/profile" />
+                        <Route element={<Cart />} path="/cart" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
-                        <PrivateRoute path="/profile" component={Profile} isAuthenticated={isAuthenticated} />
-                        <PrivateRoute path="/cart" component={Cart} isAuthenticated={isAuthenticated} />
+                
                     </Routes>
                     <Footer />
                 </ScrollToTop>
