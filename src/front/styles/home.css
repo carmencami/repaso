@@ -1,7 +1,59 @@
-/*
-    home.css: This website contains selectors only used in home.css
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-logo {
+    padding: 15px;
+    color: #fff;
+}
+
+.navbar-mainbg {
+    background-color: #5161ce;
+}
+
+#navbarSupportedContent {
+    overflow: hidden;
+    position: relative;
+}
+
+#navbarSupportedContent ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+#navbarSupportedContent ul li a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 20px 20px;
+    transition: color 0.6s;
+}
+
+#navbarSupportedContent ul li a:hover {
+    color: #fff; /* Color al pasar el mouse */
+}
+
+.nav-item {
+    list-style-type: none;
+}
+
+.navbar-toggler {
+    border: none; /* Elimina el borde del botón del navbar */
+}
+
+.hori-selector {
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition-duration: 0.6s;
+    background-color: #fff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-top: 10px;
+}
+

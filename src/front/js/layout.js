@@ -9,7 +9,7 @@ import { Login } from "./pages/login";
 import { ProductDetail } from "./pages/productDetail";
 import { Profile } from "./pages/profile";
 import { Cart } from "./pages/cart";
-import { Tienda } from "./pages/tienda";
+import  {Tienda}  from "./pages/tienda";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
